@@ -59,22 +59,40 @@ Prior to modeling, we preprocessed the data. Steps included:
   * splitting our data into training and testing sets to evaluate the model on "new data" and ensure the model does not overfit to noise.
 
 ### Logistic Regression
-the first classification model trained is a simple logisitic model with no hyperparameters in place. This generated a testing accuracy of XX, and training accuracy of XX. The confusion matrix below details the results.
+the first classification model trained is a simple logisitic model with no hyperparameters in place. This generated a testing accuracy of 66.4%, and training accuracy of 73.5%
 
-![log_model_cm](https://github.com/sabinabains/dsc-phase-3-project/blob/main/images/final_model_cm.png)
-While this model does not overfit drastically, we tested other model types to see if they can improve testing accuracy. 
+While this model does not overfit drastically, we tested other model types to see if they can improve testing accuracy and reduce the gap between the two scores.
 
 ### Decision Trees and Random Forest Models
+
 The next model run was a basic decision tree. This resulted in an almost perfect training accuracy of 98.8%, but a very low testing accuracy of 62%. The model is severly overfitting to random fluctuations in the training data, and therefore is not going to succeed when running unseen data through the model, which is our eventual goal.
 
 To attempt to fix this problem, we need to prune our tree. This includes parameters to our model to restrict it from splitting nodes until all leaf nodes are "pure". our second decision tree restricted the tree's maximum depth to 6, and the maximum sample requried to split a note to be 10% of it's sample. This resulted in a tree with 62% test accuracy as well, but a much lower training accuracy of 70%. 
 
 Next, we ran a random forest, which essentially uses multiple decision trees to make their choice based on majority rule. We used a grid search on this random forest to find the optimal C value, max depth, min sample before splitting, and min sample per leaf. Grid Search runs each combination of these parameters before returning the model with the highest scoring value (in our case, accuracy). This resulted in a testing accuracy of 64%. 
 
-
 # Evaluation
 
+In the end, we returned to our Logistic Regression models and tuned our hyperparameters using a grid search. Our final model had a low C value (meaning we did not give higher weight to the training data, and therefore reduces our chances of overfitting. This model had the following scores and confusion matrix values:
+
+* Training Data Accuracy Score: 73.5%
+* Testing Data Accuracy Score: 66.5%
+
+![final_model_cm](https://github.com/sabinabains/dsc-phase-3-project/blob/main/images/final_model_cm.png)
+
+This result had the highest accuracy score, although only slightly. Most importantly, the gap between testing and training accuracies indicates the model is not overfitting. This means the model will not be sensitive to noise, and therefore more accurate on unseen data when predicting grades for students in the upcoming school year.
+
+   Although Decision Trees had a similar score to Logistic Regression, they do not derive the significance of features in their models, whereas Logistic 
+Regression does. We can directly see which features increase the odds of failure among students, and to what extent. This is shown in the loop below, as we can see increased absences and time going out increase the odds of failure. This will help us indicate which survey questions are most crucial to ask our students, to better predict their final grade and allocate our resources to those who need them most. Lastly, although Decision trees are unafected by multicollinearity, we can see that this was not an issue within our dataset, and therefore is not a reason to dismiss regression.
+
+![corr_matrix](https://github.com/sabinabains/dsc-phase-3-project/blob/main/images/corr_matrix.png)
+
+
 # Conclusion
+
+   Overall, this result is not particularly strong. a testing recall of 67% means that our model will predict that 32% of all students who will fail at the end of the school year will in fact pass, which is not the case. We will need more robust data or different predictors to better assist our stakeholder in determining which  students to provide tutors for.
+   
+   Our stakeholders should ditribute this test to their students on the first day of school, and continue to gather more data to improve this predictive model. They should also tune the questions to those which provide the most information gain. In this case, number of absences, time spent on activities other than school, and interest in higher educations were some of the strongest features associated with an increased odds of failure. 
 
 # Repository Structure
 
