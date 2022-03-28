@@ -100,6 +100,6 @@ Regression does. We can directly see which features increase the odds of failure
 ├── data : data used for modeling
 ├── images : images used in PPT and readme
 ├── README.md : project information and repository structure
-├── Phase 3 Project - Sabina Bains : (Presentation for Stakeholders)
+├── dsc-phase-3-project-presentation 3.28.pptx : (Presentation for Stakeholders)
 └── dsc-phase-3-project-3.28.22.ipynb (jupyter notebook used for modeling)
 ```
