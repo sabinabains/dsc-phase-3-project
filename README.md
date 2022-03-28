@@ -92,7 +92,7 @@ Regression does. We can directly see which features increase the odds of failure
 
    Overall, this result is not particularly strong. a testing recall of 67% means that our model will predict that 32% of all students who will fail at the end of the school year will in fact pass, which is not the case. We will need more robust data or different predictors to better assist our stakeholder in determining which  students to provide tutors for.
    
-   Our stakeholders should ditribute this test to their students on the first day of school, and continue to gather more data to improve this predictive model. They should also tune the questions to those which provide the most information gain. In this case, number of absences, time spent on activities other than school, and interest in higher educations were some of the strongest features associated with an increased odds of failure. 
+   Our stakeholders should distribute this test to their students on the first day of school, and continue to gather more data to improve this predictive model. They should also tune the questions to those which provide the most information gain. In this case, number of absences, time spent on activities other than school, and interest in higher educations were some of the strongest features associated with an increased odds of failure. 
 
 # Repository Structure
 
