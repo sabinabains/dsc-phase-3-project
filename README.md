@@ -75,3 +75,11 @@ Next, we ran a random forest, which essentially uses multiple decision trees to 
 # Evaluation
 
 # Conclusion
+
+# Repository Structure
+
+├── data : data used for modeling
+├── images : images used in PPT and readme
+├── README.md : project information and repository structure
+├── Phase 3 Project - Sabina Bains : (Presentation for Stakeholders)
+└── dsc-phase-3-project-3.28.22.ipynb (jupyter notebook used for modeling)
