@@ -1,6 +1,6 @@
 # Overview:
 
-![volunteer_pic](https://github.com/sabinabains/dsc-phase-3-project/tree/main/images/volunteer_pic.jpg)
+![volunteer_pic](https://github.com/sabinabains/dsc-phase-3-project/blob/main/images/volunteer_pic.jpg)
 
 A volunteer organization in New York City called *Jump Start* wants to assist high school students in finding success in the classroom.
 
@@ -61,7 +61,7 @@ Prior to modeling, we preprocessed the data. Steps included:
 ### Logistic Regression
 the first classification model trained is a simple logisitic model with no hyperparameters in place. This generated a testing accuracy of XX, and training accuracy of XX. The confusion matrix below details the results.
 
-![log_model_cm](https://github.com/sabinabains/dsc-phase-3-project/tree/main/images/final_model_cm.png)
+![log_model_cm](https://github.com/sabinabains/dsc-phase-3-project/blob/main/images/final_model_cm.png)
 While this model does not overfit drastically, we tested other model types to see if they can improve testing accuracy. 
 
 ### Decision Trees and Random Forest Models
